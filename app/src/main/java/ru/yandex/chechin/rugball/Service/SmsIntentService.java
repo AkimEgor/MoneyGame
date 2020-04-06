@@ -50,7 +50,7 @@ public class SmsIntentService  extends JobIntentService {
 
     }
 /*
-* класс по выведени сообщения в шторку (в не рабочим састоянии)*/
+* процедура по выведени сообщения в шторку (в не рабочим састоянии)*/
     private void showNotification(String text) {
         Context context = getApplicationContext();
         PendingIntent contentIntent = PendingIntent.getActivity(context, 0, new Intent(context, MainActivity.class), 0);
@@ -65,7 +65,7 @@ public class SmsIntentService  extends JobIntentService {
         notificationManager.notify(R.drawable.ic_launcher_background, notification);
     }
 /*
-* класс занимается распределением смс по номеру телефона
+* процедура занимается распределением смс по номеру телефона
 * отправлению смс определенному кслссу для рабора смс
 * записовает нужные данные в базу */
     private void saveSms(String sms_body, String sms_telefon,SmsDatabaseHelper db) {

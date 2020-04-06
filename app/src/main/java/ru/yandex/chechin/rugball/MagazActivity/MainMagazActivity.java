@@ -42,7 +42,7 @@ public class MainMagazActivity extends ListActivity implements LoaderManager.Loa
 
 
 }
-/*класс по выведению данных на экран*/
+/*процедура по выведению данных на экран*/
     private void fillData() {
         String[] from = new String[]{MelonTable.COLUMN_TEXTBANK,MelonTable.COLUMN_SUMMA, MelonTable.COLUMN_DATA};
         int[] to = new int[]{R.id.kk1, R.id.kk,R.id.kk2};
@@ -69,7 +69,7 @@ public class MainMagazActivity extends ListActivity implements LoaderManager.Loa
         setListAdapter(adapter);
     }
 /*
-* класс по отправки данных и запроса в провайдер для создания курсора */
+* процедура по отправки данных и запроса в провайдер для создания курсора */
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
         String[] projection1 = {MelonTable.COLUMN_TEXTBANK,MelonTable.COLUMN_SUMMA, MelonTable.COLUMN_DATA};

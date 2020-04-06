@@ -81,7 +81,7 @@ public class MainActivity extends ListActivity /*ListFragment*/ implements
 
     }
     /*
-    * класс по выведению данных на экран */
+    * процедура по выведению данных на экран */
     private void fillData() {
         String[] from = new String[] {MelonTable.COLUMN_DATA, MelonTable.COLUMN_TEXTBANK,MelonTable.COLUMN_SUMMA, MagazTable.COLUMN_MAGAZKR};/*группа строк*/
         int[] to = new int[] {R.id.smsDate, R.id.smsMessage,R.id.symma,R.id.magazin};/*группа id*/
@@ -92,7 +92,7 @@ public class MainActivity extends ListActivity /*ListFragment*/ implements
         adapter.setViewBinder(new SimpleCursorAdapter.ViewBinder() {
             @Override
             /*
-            * класс по ворматированию данных перед выведением на экран*/
+            * процедура по ворматированию данных перед выведением на экран*/
             public boolean setViewValue(View view, Cursor cursor, int columnIndex) {
                 if (columnIndex == cursor.getColumnIndex(MelonTable.COLUMN_DATA)) {/*присвоение фармата к дате*/
                     Date d = new Date(cursor.getLong(columnIndex));
@@ -135,7 +135,7 @@ public class MainActivity extends ListActivity /*ListFragment*/ implements
         }
     }
     /*
-     * класс занимается отправкой данных и запроса в провайдер для создания курсора */
+     * процедура занимается отправкой данных и запроса в провайдер для создания курсора */
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
         String[] projection = {MelonTable.COLUMN_ID, MelonTable.COLUMN_DATA, MelonTable.COLUMN_TEXTBANK,MelonTable.COLUMN_SUMMA,MagazTable.COLUMN_MAGAZKR};/*инфармация отправыленная в провайдер*/
